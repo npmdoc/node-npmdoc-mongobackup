@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-mongobackup",     "homepage": "https://github.com/npmdoc/node-npmdoc-mongobackup",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-mongobackup.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [mongobackup (v0.2.1)](https://github.com/adamhenson/mongobackup)  [![npm package](https://img.shields.io/npm/v/npmdoc-mongobackup.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mongobackup) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mongobackup.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mongobackup)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-mongobackup",
+    "keywords": [
+        "documentation",
+        "mongobackup"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_mongobackup.js",
+    "name": "npmdoc-mongobackup",
+    "nameAlias": "npmdoc_mongobackup",
+    "nameOriginal": "npmdoc-mongobackup",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-mongobackup.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
